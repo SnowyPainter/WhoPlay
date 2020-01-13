@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>후플레이 | Who Play?</title>
+  <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-database.js"></script>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel='stylesheet' href='/stylesheets/match/match.css' />
+  <script src="/javascripts/init.js"></script>
+  <script src="/javascripts/firebase_init.js"></script>
+  <script src="/javascripts/match/match.js"></script>
+</head>
+<div id="popOverlay" class="overlay">
+  <div class="overlay-contents">
+    <h1>매칭 찾기</h1>
+    <h4>&</h4>
+    <h3>Who Play?</h3>
+    <p>Atech Soft에서 만든 'Who Play?'에서 발생 하는 모든 손해 혹은 피해의 보상은 Atech Soft에서 책임지지 않습니다.</p>
+  </div>
+</div>
+
+<body>
+  <div id="leftSideMenu" class="sideMenu">
+    <div class="side-content">
+      <a href="/">Who Play?</a>
+      <a href="/player/match">상대 매칭</a>
+      <a href="/player/match/create">방 만들기</a>
+    </div>
+  </div>
+  <div id="main">
+    <!--사용자가 입장할수있는 방 목록-->
+    <div class="rooms-table">
+      <div class="input-table">
+        <div class="input-table-header" id="table-header">
+          <div class="table-header-cell">방 목록</div>
+        </div>
+        <div class="input-table-header">
+          <div class="table-header-cell">방 이름</div>
+          <div class="table-header-cell">지역</div>
+          <div class="table-header-cell">인원</div>
+        </div>
+        <div class="input-table-body" id="rooms-list">
+          <!--rooms-->
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

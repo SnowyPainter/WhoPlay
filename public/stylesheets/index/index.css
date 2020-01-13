@@ -1,0 +1,9 @@
+#main #greeting {
+    display: none;
+    opacity: 0;
+    transition: opacity 1s;
+    text-align: center;
+}
+#main #greeting h1 {
+    font-size: 3em;
+}

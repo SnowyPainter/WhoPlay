@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>후플레이 | Who Play?</title>
+  <link rel='stylesheet' href='/stylesheets/style.css'/>
+  <link rel='stylesheet' href='/stylesheets/index/index.css'/>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/javascripts/init.js"></script>
+  <script src="/javascripts/index/index.js"></script>
+</head>
+<div id="popOverlay" class="overlay">
+  <div class="overlay-contents">
+    <h1>Who Play?</h1>
+    <h4>&</h4>
+    <h3>Atech</h3>
+    <p>Atech Soft에서 만든 'Who Play?'에서 발생 하는 모든 손해 혹은 피해의 보상은 Atech Soft에서 책임지지 않습니다.</p>
+  </div>
+</div>
+
+<body>
+  <div id="leftSideMenu" class="sideMenu">
+    <div class="side-content">
+      <a href="/">Who Play?</a>
+      <a href="/player/match">상대 매칭</a>
+    </div>
+  </div>
+  <div id="main">
+    <div id="greeting">
+      <h1>환영합니다</h1>
+      <h1>후플레이에 접속되셨습니다.</h1>
+      <h2>현재 <span id="activePlayers">0</span>명이 상대를 찾고 있습니다.</h2>
+    </div>
+  </div>
+</body>
+
+</html>

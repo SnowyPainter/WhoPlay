@@ -1,0 +1,85 @@
+.rooms-table {
+    height: 700px;
+    overflow: auto;
+    padding:0;
+}
+.input-table {
+    display: table;
+}
+.input-table-header {
+    display: table-header-group;
+    font-size: 1.5em;
+}
+.table-header-cell {
+    display:table-cell;
+    padding:15px; text-align: justify;
+    border-bottom: 3px solid white;
+}
+.input-table-body {
+    display:table-row-group;
+    font-size: 1.2em;
+}
+.input-table-row {
+    display: table-row;
+}
+.rooms-table .input-table-row:hover {
+    background-color: rgb(226, 226, 226);
+}
+.input-table-row .room-delete {
+    display: none;
+}
+.input-table-row:hover .room-delete {
+    display: block;
+}
+.table-body-cell {
+    display:table-cell;
+    padding:15px; text-align: justify;
+    border-bottom: 2px solid white;
+}
+.room-title {
+    width: 350px;
+}
+.room-region {
+    width: 100px;
+}
+.room-delete button{
+    font-size: 1.3em;
+    color:white;
+    width: 30px;
+    border: 0;
+    background-color: rgba(197, 0, 0, 0.664);
+}
+.room-delete:hover button{
+    cursor: pointer;
+    background-color: rgb(197, 0, 0);
+}
+.create-room-table input[type=text], .create-room-table input[type=password] {
+    display: block;
+}
+.create-room-table input[type=text], .create-room-table input[type=password] {
+    display: inline-block;
+    color: black;
+    padding: 10px;
+    width: 300px;
+    box-sizing: border-box;
+    background-color: rgba(233, 233, 233, 0.25);
+    border: none;
+    border-radius: 5px;
+    transition:background-color 0.5s ease;
+    font-size: 0.8em;
+}
+.create-room-table input[type=text]:focus, .create-room-table input[type=password]:focus {
+    background-color: rgba(211, 211, 211, 0.45);
+}
+.create-room-table button {
+    width: 200px; height: 50px;
+    background-color: rgba(52, 223, 0, 0.664);
+    border: 0;
+    border-radius: 5px;
+    transition:background-color 0.5s ease;
+    font-size: 0.8em;
+}
+.create-room-table button:hover {
+    cursor: pointer;
+    background-color: rgba(43, 185, 0, 0.993);
+}

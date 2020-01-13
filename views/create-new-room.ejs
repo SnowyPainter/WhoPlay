@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>후플레이 | Who Play?</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/match/match.css' />
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-database.js"></script>
+    <script src="/javascripts/init.js"></script>
+    <script src="/javascripts/firebase_init.js"></script>
+    <script src="/javascripts/match/create.js"></script>
+</head>
+<div id="popOverlay" class="overlay">
+    <div class="overlay-contents">
+        <h1>방 만들기</h1>
+        <h4>&</h4>
+        <h3>Who Play?</h3>
+        <p>Atech Soft에서 만든 'Who Play?'에서 발생 하는 모든 손해 혹은 피해의 보상은 Atech Soft에서 책임지지 않습니다.</p>
+    </div>
+</div>
+
+<body>
+    <div id="leftSideMenu" class="sideMenu">
+        <div class="side-content">
+            <a href="/">Who Play?</a>
+            <a href="/player/match">상대 매칭</a>
+        </div>
+    </div>
+    <div id="main">
+        <!--사용자가 방을 생성 하는 폼-->
+        <div class="input-table create-room-table">
+            <div class="input-table-header" id="table-header">
+                <div class="table-header-cell">방 파기</div>
+            </div>
+            <div class="input-table-body">
+                <div class="input-table-row">
+                    <div class="table-body-cell">방 이름</div>
+                    <div class="table-body-cell">
+                        <input id="new-room-title" placeholder="방 제목" maxlength="20" type="text">
+                    </div>
+                </div>
+                <div class="input-table-row">
+                    <div class="table-body-cell">지역</div>
+                    <div class="table-body-cell">
+                        <input id="new-room-region" placeholder="놀 장소의 지역과 상세 주소" maxlength="16" type="text">
+                    </div>
+                </div>
+                <div class="input-table-row">
+                    <div class="table-body-cell">최대 인원</div>
+                    <div class="table-body-cell">
+                        <input id="new-room-participants" 
+                            placeholder="허용 할 수 있는 최대 인원" maxlength="1" type="text" 
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+                    </div>
+                </div>
+                <div class="input-table-row">
+                    <div class="table-body-cell">방 삭제용 비밀번호(4자리)</div>
+                    <div class="table-body-cell">
+                        <input id="new-room-delkey" 
+                            placeholder="삭제 비밀번호" maxlength="4" type="text">
+                    </div>
+                </div>
+                <div class="input-table-row">
+                    <div class="table-body-cell">
+                        <button id="create-btn">생성</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
