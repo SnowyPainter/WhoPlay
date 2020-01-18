@@ -9,7 +9,7 @@ package-lock.json
 public/javascripts/firebase_init.js
 # Firebase cache
 .firebase/
-
+serviceAccountKey.json
 # Firebase config
 
 # Uncomment this if you'd like others to create their own Firebase project.

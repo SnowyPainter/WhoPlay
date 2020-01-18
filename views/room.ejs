@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>후플레이 | Who Play?</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/match/room.css' />
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-database.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/javascripts/init.js"></script>
+    <script src="/javascripts/firebase_init.js"></script>
+    <script src="/javascripts/match/room.js"></script>
+</head>
+<div id="popOverlay" class="overlay">
+    <div class="overlay-contents">
+        <h1>Who Play?</h1>
+        <h4>&</h4>
+        <h3>Atech</h3>
+        <p>Atech Soft에서 만든 'Who Play?'에서 발생 하는 모든 손해 혹은 피해의 보상은 Atech Soft에서 책임지지 않습니다.</p>
+    </div>
+</div>
+
+<body>
+    <div id="leftSideMenu" class="sideMenu">
+        <div class="side-content">
+            <a href="/">Who Play?</a>
+            <a href="/player/match">상대 매칭</a>
+        </div>
+    </div>
+    <div id="main">
+        <!--title bar-->
+        <div class="input-table">
+            <div class="input-table-header">
+                <div class="table-header-cell room-title"><%=title%></div>
+            </div>
+            <div class="input-table-header">
+                <div class="table-header-cell">지역 / <%=region%></div>
+                <div class="table-header-cell max-participants"><%=maxParticipants%></div>
+            </div>
+        </div>
+        <div class="chat">
+            <div id="chat-container">
+            </div>
+            <input type="text" maxlength="100" placeholder="메세지를 입력해주세요" id="send-msg">
+            <button type="button" id="send-btn">전송</button>
+        </div>
+    </div>
+</body>
+
+</html>

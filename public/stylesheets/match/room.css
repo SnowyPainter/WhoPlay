@@ -1,0 +1,79 @@
+.room-title {
+    font-size: 2.5em;
+}
+.max-participants {
+    background-color: antiquewhite;
+    border-radius: 10px;
+}
+.chat {
+    float: left;
+}
+#chat-container {
+    width:600px;
+    height:600px;
+    overflow: auto;
+    padding: 0;
+}
+.chat-message {
+    border: 2px solid #F2F2F2;
+    background-color: #F2F2F2;
+    color: black;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+.chat-message p {
+    word-break: break-all;
+}
+.ichat {
+    border: 2px solid #27A4F2;
+    background-color: #27A4F2;
+    color:#0D0D0D;
+}
+.chat-message img {
+    float: left;
+    width: 100%;
+    max-width: 50px;
+    margin:10px;
+}
+.ichat img {
+    float: right;
+}
+.chat-contents {
+    border: 2px solid #f0f0f0;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+.chat input, button {
+    font-size: 1.2em;
+    display: inline-block;
+    -moz-box-sizing: content-box; /* or `border-box` */
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+.chat input {
+    padding: 12px;
+    width: 330px;
+    background-color: rgb(216, 216, 216);
+    border: 0;
+    border-radius: 5px;
+    transition:background-color 0.5s ease;
+}
+.chat input:focus {
+    background-color: rgba(165, 165, 165, 0.356);
+    border: 0;
+}
+.chat button {
+    float:right;
+    width: 200px; padding: 10px;
+    background-color: rgba(52, 223, 0, 0.664);
+    border: 0;
+    border-radius: 5px;
+    transition:background-color 0.5s ease;
+}
+.chat button:hover {
+    cursor: pointer;
+    background-color: rgba(43, 185, 0, 0.993);
+}

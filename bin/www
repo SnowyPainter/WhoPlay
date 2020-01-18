@@ -9,6 +9,7 @@ var debug = require('debug')('whoplay:server');
 var https = require('https');
 var http = require('http');
 const fs = require('fs');
+
 /**
  * Get port from environment and store in Express.
  */
@@ -26,6 +27,7 @@ const ssl_options={
 }; */
 var server = http.createServer(app).listen(80);
 app.io.attach(server);
+
 //var server = https.createServer(ssl_options, app).listen(443);
 
 /**

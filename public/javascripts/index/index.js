@@ -6,6 +6,6 @@ window.onload = window.onload.extend(() => {
         greetingBox.style.display = "Block";
         greetingBox.style.opacity = "1";
 
-        socket.on('active-count', (active) => document.getElementById("activePlayers").innerText = active)
+        socket.on('active-count', (active) => document.getElementById("activePlayers").innerText = active-1)
     });
 })

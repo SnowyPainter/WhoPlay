@@ -3,44 +3,15 @@
     overflow: auto;
     padding:0;
 }
-.input-table {
-    display: table;
-}
-.input-table-header {
-    display: table-header-group;
-    font-size: 1.5em;
-}
-.table-header-cell {
-    display:table-cell;
-    padding:15px; text-align: justify;
-    border-bottom: 3px solid white;
-}
-.input-table-body {
-    display:table-row-group;
-    font-size: 1.2em;
-}
-.input-table-row {
-    display: table-row;
-}
-.rooms-table .input-table-row:hover {
-    background-color: rgb(226, 226, 226);
-}
-.input-table-row .room-delete {
-    display: none;
-}
-.input-table-row:hover .room-delete {
-    display: block;
-}
-.table-body-cell {
-    display:table-cell;
-    padding:15px; text-align: justify;
-    border-bottom: 2px solid white;
+.room {
+    cursor: auto;
 }
 .room-title {
     width: 350px;
+    cursor: pointer;
 }
 .room-region {
-    width: 100px;
+    width: 300px;
 }
 .room-delete button{
     font-size: 1.3em;

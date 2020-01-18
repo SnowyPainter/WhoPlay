@@ -3,9 +3,11 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var socketIo = require('socket.io');
 
 var indexRouter = require('./routes/index');
 var playerRouter = require('./routes/player');
+
 var app = express();
 
 // view engine setup
@@ -21,21 +23,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/player', playerRouter);
 
-app.io = require('socket.io')();
-let activePlayers = 0;
-app.io.on('connection', (socket) => {
-  app.io.emit('active-count', activePlayers)
-  activePlayers++;
-
-  socket.on('forceDisconnect', () => {
-    socket.emit('active-count', activePlayers)
-    socket.disconnect();
-  })
-  socket.on('disconnect', () => {
-    activePlayers--;
-  });
-});
-
+app.io = socketIo();
+require('./routes/chat-socket')(app.io);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
