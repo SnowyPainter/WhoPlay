@@ -1,6 +1,5 @@
 var socket = io('http://localhost:80');
 var database = firebase.database();
-
 const key = new URLSearchParams(window.location.search).get("key");
 const myId = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
 
@@ -30,6 +29,9 @@ socket.on('receive-msg', (data) => {
 });
 
 window.onload = window.onload.extend(() => {
+    let leftSide = document.getElementById("leftSideMenu");
+    let mapContainer = document.getElementById("kakaoMap");
+
     document.getElementById("send-msg").addEventListener('keyup', (event) => {
         if (event.keyCode != 13)
             return;
@@ -41,6 +43,11 @@ window.onload = window.onload.extend(() => {
         let msg = document.getElementById("send-msg");
         sendMessage(msg.value)
         msg.value = '';
+    });
+    leftSide.addEventListener("transitionend", () => {
+        generateMap(mapContainer).then((map) => {
+            map.relayout();
+        });
     });
 
     function sendMessage(text) {
@@ -56,9 +63,21 @@ window.onload = window.onload.extend(() => {
 
         updateChatScroll();
     }
-
     function updateChatScroll(){
         var element = document.getElementById("chat-container");
         element.scrollTop = element.scrollHeight;
     }
 })
+
+function generateMap(container) {
+    return new Promise((resolve, reject) => {
+        let mapOptions = {
+            center: new kakao.maps.LatLng(33.450701, 126.570667),
+            level: 3
+        };
+        let map = new kakao.maps.Map(container, mapOptions);
+        map.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
+        
+        resolve(map);
+    });
+}

@@ -5,6 +5,8 @@
     <title>후플레이 | Who Play?</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel='stylesheet' href='/stylesheets/match/room.css' />
+    <script type="text/javascript"
+        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4557e584626e7e40eb3f0835622a6f26"></script>
     <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
@@ -38,7 +40,6 @@
             </div>
             <div class="input-table-header">
                 <div class="table-header-cell">지역 / <%=region%></div>
-                <div class="table-header-cell max-participants"><%=maxParticipants%></div>
             </div>
         </div>
         <div class="chat">
@@ -46,6 +47,10 @@
             </div>
             <input type="text" maxlength="100" placeholder="메세지를 입력해주세요" id="send-msg">
             <button type="button" id="send-btn">전송</button>
+        </div>
+
+        <div class="user-map">
+            <div id="kakaoMap"></div>
         </div>
     </div>
 </body>

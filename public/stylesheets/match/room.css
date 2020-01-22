@@ -7,6 +7,9 @@
 }
 .chat {
     float: left;
+    padding:10px;
+    background-color: whitesmoke;
+    border-radius: 10px;
 }
 #chat-container {
     width:600px;
@@ -76,4 +79,14 @@
 .chat button:hover {
     cursor: pointer;
     background-color: rgba(43, 185, 0, 0.993);
+}
+.user-map {
+    float: right;
+    background-color: #27A4F2;
+    padding: 10px;
+    border-radius: 10px;
+}
+#kakaoMap {
+    width:600px;
+    height:400px;
 }

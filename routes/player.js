@@ -20,8 +20,9 @@ router.get('/match/rooms', (req, res, next) => {
       if (values) {
         res.render('room.ejs', {
           title: values.title,
-          region: values.region,
-          maxParticipants: values.maxParticipants
+          region: values.region/*,
+          actives: values.actives,
+          maxParticipants: values.maxParticipants*/
         });
       }
       else {
