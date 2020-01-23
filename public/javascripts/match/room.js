@@ -2,10 +2,11 @@ var socket = io('http://localhost:80');
 var database = firebase.database();
 const key = new URLSearchParams(window.location.search).get("key");
 const myId = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
-
+let roomLocation;
 database.ref('roomsList').child(key).once('value').then(
     (snapshot) => {
         const snapshotVals = snapshot.val();
+        roomLocation = snapshotVals.coords;
         if (snapshotVals.actives >= snapshotVals.maxParticipants) {
             alert("유저들로 꽉 찬 방임으로 접속하실수 없습니다.");
             location.href = "/player/match";
@@ -45,7 +46,11 @@ window.onload = window.onload.extend(() => {
         msg.value = '';
     });
     leftSide.addEventListener("transitionend", () => {
-        generateMap(mapContainer).then((map) => {
+        let mapOptions = {
+            center: new kakao.maps.LatLng(roomLocation.Y, roomLocation.X),
+            level: 5
+        };
+        generateMap(mapContainer, mapOptions).then((map) => {
             map.relayout();
         });
     });
@@ -69,12 +74,8 @@ window.onload = window.onload.extend(() => {
     }
 })
 
-function generateMap(container) {
+function generateMap(container, mapOptions) {
     return new Promise((resolve, reject) => {
-        let mapOptions = {
-            center: new kakao.maps.LatLng(33.450701, 126.570667),
-            level: 3
-        };
         let map = new kakao.maps.Map(container, mapOptions);
         map.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
         

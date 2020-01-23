@@ -5,6 +5,9 @@
     <title>후플레이 | Who Play?</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel='stylesheet' href='/stylesheets/match/match.css' />
+    <script type="text/javascript"
+        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4557e584626e7e40eb3f0835622a6f26&libraries=services"></script>
+    <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
@@ -43,30 +46,38 @@
                     </div>
                 </div>
                 <div class="input-table-row">
-                    <div class="table-body-cell">지역</div>
-                    <div class="table-body-cell">
-                        <input id="new-room-region" placeholder="놀 장소의 지역과 상세 주소" maxlength="10" type="text">
-                    </div>
-                </div>
-                <div class="input-table-row">
                     <div class="table-body-cell">최대 인원</div>
                     <div class="table-body-cell">
-                        <input id="new-room-participants" 
-                            placeholder="허용 할 수 있는 최대 인원" maxlength="1" type="text" 
+                        <input id="new-room-participants" placeholder="허용 할 수 있는 최대 인원" maxlength="1" type="text"
                             oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
                     </div>
                 </div>
                 <div class="input-table-row">
                     <div class="table-body-cell">방 삭제용 비밀번호(4자리)</div>
                     <div class="table-body-cell">
-                        <input id="new-room-delkey" 
-                            placeholder="삭제 비밀번호" maxlength="4" type="text">
+                        <input id="new-room-delkey" placeholder="삭제 비밀번호" maxlength="4" type="text">
+                    </div>
+                </div>
+                <div class="input-table-row">
+                    <div class="table-body-cell">지역</div>
+                    <div class="table-body-cell">
+                        <input type="text" id="postcode" placeholder="우편번호">
+                        <input type="text" id="address" placeholder="주소"><br>
+                        <input type="text" id="detail-address" placeholder="상세주소" style="margin-top: 10px;margin-bottom: 5px;"><br>
+                        <button id="find-postcode">우편 번호 찾기</button>
                     </div>
                 </div>
                 <div class="input-table-row">
                     <div class="table-body-cell">
                         <button id="create-btn">생성</button>
                     </div>
+                </div>
+
+                <div id="layer"
+                    style="display:none;position:fixed;overflow:hidden;z-index:1;-webkit-overflow-scrolling:touch;">
+                    <img src="//t1.daumcdn.net/postcode/resource/images/close.png" id="postcodeClose"
+                        style="cursor:pointer;position:absolute;right:-3px;top:-3px;z-index:1"
+                        onclick="closeDaumPostcode()" alt="닫기 버튼">
                 </div>
             </div>
         </div>

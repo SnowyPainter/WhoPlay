@@ -87,6 +87,68 @@
     border-radius: 10px;
 }
 #kakaoMap {
-    width:600px;
-    height:400px;
+    width:800px;
+    height:600px;
+    border-radius: 20px;
+}
+@media(max-width: 1880px) {
+    .chat {
+        float:none;
+        width:600px;
+    }
+    .user-map {
+        float:none;
+        width:600px;
+        height:400px;
+    }
+    #chat-container {
+        height:600px;
+    }
+    #kakaoMap {
+        width: 600px;
+        height:400px;
+    }
+}
+@media(max-width: 1440px) {
+    .room-title {
+        font-size: 2.2em;
+    }
+    .chat {
+        padding:7px;
+    }
+    #chat-container {
+        width:400px;
+        height:400px;
+    }
+    .chat-message {
+        padding: 3px;
+        margin: 5px 0;
+    }
+    .chat-message img {
+        max-width: 30px;
+        margin:5px;
+    }
+    .chat-contents {
+        border-radius: 3px;
+        padding: 5px;
+        margin: 5px 0;
+    }
+    .chat input, button {
+        font-size: 0.8em;
+    }
+    .chat input {
+        padding: 6px;
+        width: 270px;
+    }
+    .chat button {
+        width: 160px; padding: 7px;
+    }
+    .user-map {
+        padding: 5px;
+        border-radius: 5px;
+    }
+    #kakaoMap {
+        width:400px;
+        height:400px;
+    }
 }

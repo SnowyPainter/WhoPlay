@@ -12,7 +12,7 @@ window.onload = window.onload.extend(() => {
             room.innerHTML = `
             <input type="hidden" class="room-key-id" value='`+ key + `'>
             <div class="table-body-cell room-title">`+ data.title + `</div>
-            <div class="table-body-cell room-region">`+ data.region + `</div>
+            <div class="table-body-cell room-region">`+ data.address + `</div>
             <div class="table-body-cell room-participants">`+data.actives+` / `+ data.maxParticipants + `명</div>
             <div class="table-body-cell room-delete"><button>X</button></div>
             `;

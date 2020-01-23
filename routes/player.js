@@ -18,11 +18,10 @@ router.get('/match/rooms', (req, res, next) => {
     (snapshot) => {
       const values = snapshot.val();
       if (values) {
+        console.log(values);
         res.render('room.ejs', {
           title: values.title,
-          region: values.region/*,
-          actives: values.actives,
-          maxParticipants: values.maxParticipants*/
+          address: values.address, detailAddr: values.detailAddr
         });
       }
       else {
