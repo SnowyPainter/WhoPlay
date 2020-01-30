@@ -7,3 +7,38 @@
 #main #greeting h1 {
     font-size: 3em;
 }
+#nav {
+    display:none;
+    position:fixed;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+#nav a{
+    font-size: 25px;
+    border-radius: 5px;
+    padding:10px;
+    color:white;
+    background-color:#732222;
+}
+@media (max-width: 920px) {
+    body {
+        background-image: url("/images/banner/mobile-bg.png");
+    }
+    #main #greeting h1 {
+        font-size: 2em;
+        color:white;
+    }
+    #main #greeting h2 {
+        color:rgb(255, 207, 104);
+    }
+    #nav {
+        display:block;
+    }
+    #nav a {
+        text-decoration: none;
+    }
+    #nav a:hover {
+        background-color: #965656;
+        cursor: pointer;
+    }
+}

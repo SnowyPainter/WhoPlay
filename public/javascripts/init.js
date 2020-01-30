@@ -33,4 +33,13 @@ window.onload = () => {
     leftSide.addEventListener("transitionend", () => {
         leftSide.getElementsByClassName("side-content")[0].style.display = "block";
     });
+
+    window.addEventListener("resize", (e) => {
+        if(e.target.outerWidth <= 920) {
+            main.style.marginLeft = "0%";
+        }
+        else {
+            main.style.marginLeft = leftSideMenuWidth;
+        }
+    });
 }
