@@ -25,9 +25,11 @@ window.onload = () => {
     popupOverlay.style.width = "0%";
 
     popupOverlay.addEventListener("transitionend", () => {
-        leftSide.style.width = leftSideMenuWidth;
-        main.style.marginLeft = leftSideMenuWidth;
+        if(window.outerWidth > 920) {
+            main.style.marginLeft = leftSideMenuWidth;
+        }
         main.style.display = "block";
+        leftSide.style.width = leftSideMenuWidth;
     });
 
     leftSide.addEventListener("transitionend", () => {

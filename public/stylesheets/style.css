@@ -42,7 +42,7 @@ body {
   padding-top: 60px;
 }
 .side-content {
-  display: none;
+  display: block;
 }
 .sideMenu a {
   margin: 10px;
@@ -60,7 +60,7 @@ body {
 }
 #main {
   display: none;
-  margin-left: 0;
+  margin-left: 18%;
   transition: margin-left .2s;
   padding: 16px;
 }
@@ -115,6 +115,12 @@ body {
     padding: 4px 4px 4px 16px;
     font-size: 1.8em;
   }
+  .participants {
+    display:none;
+  }
+  .input-table-row:hover .room-delete {
+    display: none;
+  }
 }
 @media (max-width: 920px) {
   .overlay-contents {
@@ -126,5 +132,18 @@ body {
   }
   .sideMenu {
     display:none
+  }
+  #main {
+    margin-left: 0;
+  }
+  .input-table-header {
+    font-size: 1.2em;
+  }
+  .table-header-cell {
+    padding:7px;
+  }
+  .table-body-cell {
+    padding:5px;
+    font-size:1em;
   }
 }

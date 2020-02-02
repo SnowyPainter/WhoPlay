@@ -148,7 +148,45 @@
         border-radius: 5px;
     }
     #kakaoMap {
+        width:600px;
+        height:400px;
+    }
+}
+
+@media(max-width: 920px) {
+    .user-map {
+        display: none;
+    }
+    .chat {
+        width:100%;
+        height:450px;
+        padding:4px;
+    }
+    #chat-container {
         width:400px;
         height:400px;
+    }
+    .chat-message {
+        padding: 3px;
+        margin: 5px 0;
+    }
+    .chat-message img {
+        max-width: 25px;
+        margin:5px;
+    }
+    .chat-contents {
+        border-radius: 3px;
+        padding: 5px;
+        margin: 5px 0;
+    }
+    .chat input, button {
+        font-size: 0.8em;
+    }
+    .chat input {
+        padding: 15px;
+        width: 270px;
+    }
+    .chat button {
+        width: 120px; padding: 15px;
     }
 }

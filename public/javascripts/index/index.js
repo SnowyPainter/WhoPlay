@@ -1,4 +1,4 @@
-var socket = io('http://localhost:80');
+var socket = io('/');
 
 window.onload = window.onload.extend(() => {
     socket.on('connect', () => {

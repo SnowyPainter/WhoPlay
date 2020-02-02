@@ -1,4 +1,4 @@
-var socket = io('http://localhost:80');
+var socket = io('/');
 var database = firebase.database();
 var kakaoMap;
 const key = new URLSearchParams(window.location.search).get("key");
@@ -109,13 +109,13 @@ window.onload = window.onload.extend(() => {
         averageMarker.setMap(kakaoMap);
         averageMarker.setPosition(new kakao.maps.LatLng(averageLat,averageLng));
     });
+    
     //load map and events
     leftSide.addEventListener("transitionend", () => {
         let mapOptions = {
             center: new kakao.maps.LatLng(roomLocation.Y, roomLocation.X),
             level: 5
         };
-
         generateMap(mapContainer, mapOptions).then((map) => {
             kakaoMap = map;
             mylocationMarker = new kakao.maps.Marker({
